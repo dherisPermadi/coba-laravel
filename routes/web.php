@@ -21,7 +21,6 @@ Route::get('/', function () {
     ]);
 });
 
-
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
@@ -32,4 +31,4 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('posts/{slug}', [PostController::class, 'show']);
+Route::get('posts/{post:slug}', [PostController::class, 'show']);
